@@ -11,6 +11,8 @@ Scout + Directory ─► Research ─► Browser ─► LLM checker ─► Quali
                                              check)         Bezirk)      confidence)
 ```
 
+**Live dashboard:** https://hamid866.github.io/heidi-lead-dashboard/
+
 **Berlin run (Nov 2026):** 1,655 listings → 974 confirmed property managers in all 12 districts → 75 Tier A / 147 Tier B leads, 268 decision makers.
 
 ## Why it's built this way

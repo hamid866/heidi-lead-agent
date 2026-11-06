@@ -24,6 +24,7 @@ STEPS = [
     ("Qualifier: refresh", ["agents/qualify.py"]),
     ("Build Excel workbook", ["agents/build_sheet.py"]),
     ("Build approach deck", ["agents/build_deck.py"]),
+    ("Export dashboard data", ["agents/export_dashboard.py"]),
 ]
 
 if __name__ == "__main__":

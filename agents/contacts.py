@@ -132,7 +132,13 @@ def find_email(name: str, emails: list[str], domain: str, all_people: list[str])
     personal = [e for e in emails if not GENERIC.match(e.split("@")[0])]
     for e in personal:
         loc = ascii_name(e.split("@")[0].replace(".", "").replace("_", ""))
-        if l and l in loc:
+        if not (l and l in loc):
+            continue
+        # the surname alone is not enough: family businesses share it (Heike vs. Maik Bethke)
+        rest = loc.replace(l, "", 1)
+        if rest in ("", f) or (f and (rest == f[0] or rest.startswith(f) or f.startswith(rest) and len(rest) >= 3)):
+            if rest == "" and sum(1 for p in all_people if ascii_name(split_name(p)[1]) == l) > 1:
+                continue  # "bethke@" is ambiguous when two Bethkes lead the company
             return {"email": e, "confidence": "verified_on_website", "how": "address published on company website"}
     for e in personal:
         pat = pattern_of(e, all_people)
