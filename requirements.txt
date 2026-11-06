@@ -1,0 +1,9 @@
+requests
+beautifulsoup4
+lxml
+openpyxl
+pandas
+dnspython
+tldextract
+playwright
+python-pptx

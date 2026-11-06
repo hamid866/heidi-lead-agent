@@ -1,0 +1,7 @@
+.env
+.venv/
+__pycache__/
+# lead data contains personal business contacts - never publish
+data/raw/
+data/processed/
+output/
